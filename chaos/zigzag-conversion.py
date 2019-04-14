@@ -55,12 +55,5 @@ def convert2(s,numRows):
         r += s
     return r
 
-
-# convert2('ABCDE',numRows=2)
-# print(convert2('ABCD',numRows=3))
-#
 print(convert2('LEETCODEISHIRING',numRows=3))
-# d = {}
-# d[0] = d.get(0,'') + '2'
-# print(d)
 
