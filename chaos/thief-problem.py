@@ -36,11 +36,5 @@ def helper(root):
 
 print(rob(t))
 
-class Solution(object):
-    l = []
-    def inorderTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+
   
