@@ -14,8 +14,6 @@
 
 #回溯法
 
-
-
 def generateParenthesis(n):
     '''
     如果左边的'('少于 n ，可以继续添加'('    ---->一共n对
