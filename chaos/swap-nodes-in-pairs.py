@@ -27,6 +27,24 @@ l.next = ListNode(2)
 l.next.next = ListNode(3)
 l.next.next.next = ListNode(4)
 l.next.next.next.next = ListNode(5)
+
+def swap_pairs(head):
+    if not head or not head.next:
+        return head
+    pre = head
+    current = pre.next
+    next = current.next
+    current.next = pre
+    pre.next = swap_pairs(next)
+    return current
+
+l = swap_pairs(l)
+while l:
+    print(l.val)
+    l = l.next
+
+
+
 #反转链表I
 def reverseList(head):
     pre = None
@@ -37,6 +55,8 @@ def reverseList(head):
         pre = current
         current = next
     return pre
+
+
 
 #反转链表II
 def reverseList2(head,m,n):
@@ -68,11 +88,23 @@ def reverseList2(head,m,n):
     reverseTail.next = current
     return head
 
-reverseL = reverseList2(l,2,4)
+def reverseListByTwoStep(head):
+    if not head or not head.next:
+        return head
+    pre = head
+    current = head.next
+    next = current.next
+    current.next = pre
+    pre.next = reverseListByTwoStep(next)
+    return current
 
 
-while reverseL:
-    print(reverseL.val)
-    reverseL = reverseL.next
+# reverseL = reverseListByTwoStep(l)
+#
+#
+#
+# while reverseL:
+#     print(reverseL.val)
+#     reverseL = reverseL.next
 
 

@@ -36,7 +36,56 @@ def strStr(haystack, needle):
     return -1
 
 # print(strStr('abdsaidnsioaddd','nsi'))
-a = 3
-b = 2
-a,b = b,a
-print(a,b)
+# a = 3
+# b = 2
+# a,b = b,a
+# print(a,b)
+from collections.abc import Iterator
+
+class Nums:
+    def __init__(self, nums):
+        self.nums = nums
+        self.index = 0
+
+    def __iter__(self):
+        return self
+        # return MyIterator(self.nums)
+
+    def __next__(self):
+        if self.index < len(self.nums):
+            data = self.nums[self.index]
+            self.index += 1
+            return data
+        else:
+            raise StopIteration
+
+
+
+
+# class MyIterator(Iterator):
+#     def __init__(self, nums):
+#         self.nums = nums
+#         self.index = 0
+#
+#     def __getitem__(self, item):
+#         return self.nums[item]
+#
+#     def __next__(self):
+#         try:
+#             data = self.nums[self.index]
+#         except:
+#             raise StopIteration
+#         self.index += 1
+#         return data
+
+nums = Nums([1,2,3])
+# for num in nums:
+#     print(num)
+
+# for i in nums:
+#     print(i)
+try:
+    while next(nums):
+        print('ok')
+except StopIteration:
+    pass

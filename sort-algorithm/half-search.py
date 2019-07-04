@@ -18,6 +18,6 @@ def half_search(l,target):
     return False
 
 
-l = [1,3,5,6]
-target = 7
+l = [1, 3, 6, 8]
+target = 4
 print(half_search(l,target))
