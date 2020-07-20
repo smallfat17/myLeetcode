@@ -19,5 +19,5 @@ def half_search(l,target):
 
 
 l = [1, 3, 6, 8]
-target = 4
+target = 8
 print(half_search(l,target))

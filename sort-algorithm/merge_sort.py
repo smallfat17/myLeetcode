@@ -3,19 +3,21 @@
 '''
 def merge_sort(nums):
     # print(nums)
-    if len(nums) == 0:
-        return
-    if len(nums) == 1:
-        return [nums[0]]
+
+    if len(nums) < 2:
+        return nums
     mid = len(nums) // 2
     left = merge_sort(nums[:mid])
     right = merge_sort(nums[mid:])
+    return merge(left, right)
 
+
+def merge(left, right):
     new_list = []
     l_index = 0
     r_index = 0
-    while l_index < len(left)  and r_index < len(right):
-        if left[l_index] > right[r_index]:
+    while l_index < len(left) and r_index < len(right):
+        if left[l_index][0] > right[r_index][0]:
             new_list.append(right[r_index])
             r_index += 1
         else:
@@ -30,8 +32,7 @@ def merge_sort(nums):
 
 
 
-
 if __name__ == '__main__':
-    nums = [4,7,9,1,2,6,5]
+    nums =  [[74,78],[61,63],[46,50],[51,54],[50,50],[60,64],[39,42],[25,27],[91,95]]
     l = merge_sort(nums)
     print(l)
